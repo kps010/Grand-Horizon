@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Configurator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Configure.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container car-details">
+        <h1 id="carHeading">Car Details</h1>
+        <img id="carImage" src="" alt="" />
+      </div>
+      <div class="specifications">
+        <button
+          type="button"
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          style="width: 100%"
+        >
+          <div style="">
+            <div style="display: inline-block; margin-right: 20%">
+              <p class="data-label">Engine Power</p>
+              <p class="data-value">150 kW (204 PS)</p>
+            </div>
+            <div style="display: inline-block; margin-right: 20%">
+              <p class="data-label">Fuel type</p>
+              <p class="data-value" id="outer_fuel"></p>
+            </div>
+            <div style="display: inline-block; margin-right: 20%">
+              <p class="data-label">Acceleratopn</p>
+              <p class="data-value">8.6 s</p>
+            </div>
+          </div>
+        </button>
+
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Engine / Technical data.
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="tech-section">
+                  <h3 class="section-title" style="margin-top: 10px !important">
+                    ENGINE DATA
+                  </h3>
+
+                  <div class="data-row">
+                    <span class="data-label">Engine Power</span>
+                    <span class="data-value" id="performance"
+                      >150 kW (204 PS)</span
+                    >
+                  </div>
+
+                  <div class="data-row">
+                    <span class="data-label">Engine torque</span>
+                    <span class="data-value" id="torque">250 Nm</span>
+                  </div>
+
+                  <div class="data-row">
+                    <span class="data-label">Fuel type</span>
+                    <span class="data-value" id="fuel_type"></span>
+                  </div>
+                </div>
+
+                <div class="tech-section" id="consumption">
+                  <h3 class="section-title">CONSUMPTION</h3>
+
+                  <div class="data-row">
+                    <span class="data-label" id="fuel_consumption_label"
+                      >Consumption</span
+                    >
+                    <span class="data-value" id="fuel_consumption"
+                      >13.38 l/100 km</span
+                    >
+                  </div>
+                </div>
+
+                <div class="tech-section" id="electric">
+                  <h3 class="section-title">Electric Charging</h3>
+
+                  <div class="data-row">
+                    <span class="data-label" id="battery_size_label"
+                      >Battery size</span
+                    >
+                    <span class="data-value" id="battery_size"
+                      >66.5 kWh / 64.8 kWh</span
+                    >
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label" id="cahrging_time_ac_label"
+                      >Charging time (AC,0-100% SOC)</span
+                    >
+                    <span class="data-value" id="cahrging_time_ac">6:45 h</span>
+                  </div>
+                </div>
+
+                <div class="tech-section">
+                  <h3 class="section-title">Performance / WEIGHT</h3>
+
+                  <div class="data-row">
+                    <span class="data-label">Top speed</span>
+                    <span class="data-value" id="top_speed">215 km/h</span>
+                  </div>
+
+                  <div class="data-row">
+                    <span class="data-label">Acceleratopn</span>
+                    <span class="data-value" id="acceleration">8.6 s</span>
+                  </div>
+
+                  <div class="data-row">
+                    <span class="data-label" id="tank_capacity_label"
+                      >Tank capacity</span
+                    >
+                    <span class="data-value" id="tank_capacity">65 liter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <a href="AboutUs.html" class="link">click here</a>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><span data-feather="mail"></span> grandhorizon@gmail.com</p>
+          <p><span data-feather="phone"></span> +91 8556458596</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="link"><span data-feather="instagram"></span></a>
+            <a href="#" class="link"><span data-feather="twitter"></span></a>
+            <a href="#" class="link"><span data-feather="facebook"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Grand Horizon. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // Utility function to get query parameters from URL
+      function getQueryParams() {
+        const params = {};
+        window.location.search.replace(
+          /[?&]+([^=&]+)=([^&]*)/gi,
+          function (match, key, value) {
+            params[key] = decodeURIComponent(value);
+          }
+        );
+        return params;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = getQueryParams();
+        const details = params.details || "No details provided";
+
+        // Display the details on the page
+        const carHeading = document.getElementById("carHeading");
+        carHeading.textContent = details;
+
+        // Optionally, if you want to display an image related to the details,
+        // you can set a static image or map details to an image.
+        // For demonstration, here is a placeholder image:
+        const carImage = document.getElementById("carImage");
+
+        //   carImage.src = "https://via.placeholder.com/800x400?text=" + encodeURIComponent(details);
+        carImage.alt = details;
+        details_splited = details.split(" ");
+        let tableName = "";
+        if (
+          details_splited[1] &&
+          details_splited[1].charAt(0).toLowerCase() === "i"
+        ) {
+          carImage.src =
+            "../Images/i-Series/" + encodeURIComponent(details) + ".webp";
+          tableName = "bmwi";
+          document.getElementById("electric").style.visibility = "visible";
+          document.getElementById("consumption").style.visibility = "hidden";
+          document.getElementById("tank_capacity").style.visibility = "hidden";
+          document.getElementById("tank_capacity_label").style.visibility =
+            "hidden";
+          document.getElementById("outer_fuel").innerHTML = "Electric";
+          document.getElementById("fuel_type").innerHTML = "Electric";
+        } else if (
+          details_splited[1] &&
+          details_splited[1].charAt(0).toLowerCase() === "x"
+        ) {
+          carImage.src =
+            "../Images/x-Series/" + encodeURIComponent(details) + ".webp";
+          tableName = "x";
+          document.getElementById("electric").style.visibility = "hidden";
+          document.getElementById("consumption").style.visibility = "visible";
+          document.getElementById("tank_capacity").style.visibility = "visible";
+          document.getElementById("tank_capacity_label").style.visibility =
+            "visible";
+          document.getElementById("outer_fuel").innerHTML = "Petrol";
+          document.getElementById("fuel_type").innerHTML = "Petrol";
+        } else if (
+          details_splited[1] &&
+          details_splited[1].charAt(0).toLowerCase() === "m"
+        ) {
+          carImage.src =
+            "../Images/m-Series/" + encodeURIComponent(details) + ".webp";
+          tableName = "m";
+          document.getElementById("electric").style.visibility = "hidden";
+          document.getElementById("consumption").style.visibility = "visible";
+          document.getElementById("tank_capacity").style.visibility = "visible";
+          document.getElementById("tank_capacity_label").style.visibility =
+            "visible";
+          document.getElementById("outer_fuel").innerHTML = "Petrol";
+          document.getElementById("fuel_type").innerHTML = "Petrol";
+        } else if (details_splited[2] && details_splited[2] === "Series") {
+          carImage.src = "../Images/" + encodeURIComponent(details) + ".webp";
+          tableName = "series";
+          document.getElementById("electric").style.visibility = "hidden";
+          document.getElementById("consumption").style.visibility = "visible";
+          document.getElementById("tank_capacity").style.visibility = "visible";
+          document.getElementById("tank_capacity_label").style.visibility =
+            "visible";
+          document.getElementById("outer_fuel").innerHTML = "Petrol";
+          document.getElementById("fuel_type").innerHTML = "Petrol";
+        }
+        console.log(carImage.src);
+        feather.replace();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- DATABSE -->
+<!-- const { createPool } = require("mysql");
+        const pool = createPool({
+          host: "localhost",
+          user: "root",
+          password: "",
+          database: "grand_horizon",
+          connectioLimit: 10,
+        });
+
+        pool.query(
+          `select * from ${tableName} where model=${details}`,
+          (err, result, field) => {
+            if (err) return console.log("error", err);
+            {
+              const performance = document.getElementById("performance");
+              performance.textContent = result[0]["performance"];
+              const torque = document.getElementById("torque");
+              torque.textContent = result[0]["torque"];
+              if ("battery_size" in result[0]) {
+                const batter_size = document.getElementById("battery_size");
+                batter_size.textContent = result[0]["batter_size"];
+              }
+
+              const fuel_type = document.getElementById("fuel_type");
+              const fuel_consumption =
+                document.getElementById("fuel_consumption");
+              const battery_size = document.getElementById("battery_size");
+              const cahrging_time_ac =
+                document.getElementById("cahrging_time_ac");
+              const top_speed = document.getElementById("top_speed");
+              const acceleration = document.getElementById("acceleration");
+              const tank_capacity = document.getElementById("tank_capacity");
+
+              if (tableName === "bmwi") {
+                fuel_type.textContent = "Electric";
+                battery_size.textContent = result[0]["battery_size"];
+                cahrging_time_ac.textContent = result[0]["cahrging_time_ac"];
+              } else {
+                fuel_type.textContent = "Petrol";
+                fuel_consumption.textContent = result[0]["fuel_consumption"];
+                top_speed.textContent = result[0]["top_speed"];
+                tank_capacity.textContent = result[0]["tank_capacity"];
+              }
+              acceleration.textContent = result[0]["acceleration"];
+            }
+            //   return result;
+          }
+        ); -->

@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+.merriweather-light {
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.merriweather-light:hover {
+  font-weight: 700;
+}
+/* .navigation {
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+      } */
+
+.model-nav {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(60px);
+}
+
+.series{
+  padding-top: 100px;
+}
+
+.model-nav-item:hover,
+.model-nav-item::selection,
+.nav-item:hover {
+  border-bottom: 3px solid blue;
+}
+
+.model-nav-item {
+  margin-right: 10px;
+}
+
+.border-bottom {
+  border-bottom: 3px solid blue !important;
+}
+
+/* #bmwi{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      } */
+
+.all-cars {
+  padding-left: 80px;
+  width: 100%;
+  /* display: flex;
+  flex-wrap: nowrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-gap: 10px;
+  /* justify-items: center;
+    align-items: center; */
+  /* place-items: center; */
+  border-bottom: 1px solid grey;
+  margin-bottom: 20px;
+  /* margin-top: 20px; */
+  
+}
+
+.model-heading {
+  margin-left: 100px;
+}
+
+.car-img {
+  transition: all 1s ease-in-out;
+}
+
+.card:hover .car-img {
+  transform: scale(1.25);
+}
+
+.car-button {
+  width: 18rem;
+  border: none;
+  margin: 10px;
+  background: transparent;
+}
+
+/* @media (min-width: 730px) and (max-width: 1050px) {
+  .all-cars {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 450px) and (max-width: 730px) {
+  .all-cars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .all-cars {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */
+
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 2%;
+  /* padding-bottom: 2%; */
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  align-items: center;
+}
+
+/* Modal Image */
+.modal-image {
+  width: fit-content;
+  /* height: auto; */
+  display: block;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Disable background scrolling when modal is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-btn{
+  width: 30%;
+  margin-left: 13%;
+}
+
+
+/* Footer */
+:root {
+    /* color and animations variables */
+    --blue: #7243ff;
+    --glass: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-in-out;
+}
+
+.footer {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.865));
+    color: white;
+    padding: 80px 24px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 48px;
+}
+
+.footer-section h4 {
+    color: var(--blue);
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--blue);
+}
+
+.footer-section p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: white;
+    transition: var(--transition);
+}
+
+.footer-section p:hover {
+    color: var(--blue);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.link {
+    color: white;
+    transition: var(--transition);
+    transform: translateY(0);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--blue);
+    transform: translateY(-4px);
+}
+
+.footer-bottom {
+    color: white;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass);
+    text-align: center;
+    opacity: 0.8;
+}
+
+.footer-bottom::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.484);
+    margin-bottom: 20px;
+}
