@@ -21,12 +21,13 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <style>
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
         background: #f5f5f5;
-        background-image: url('../Images/bmw_aboutUs.avif');
+        background-image: url("../Images/bmw_aboutUs.avif");
         background-size: cover;
         background-position: center;
       }
@@ -38,7 +39,6 @@
         padding: 25px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        
       }
       h1 {
         text-align: center;
@@ -107,11 +107,23 @@
       .nav-item:hover {
         border-bottom: 3px solid blue;
       }
+
+      .home {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      .home:hover {
+        border-bottom: 3px solid blue;
+      }
     </style>
   </head>
   <body>
+    <a class="home" href="HomePage.html">Home</a>
     <div class="container">
       <h1>Contact Us</h1>
+      <div id="successMessage" class="success"></div>
       <form id="contactForm" novalidate>
         <div class="form-field">
           <label for="name">Name:</label>
@@ -159,7 +171,6 @@
         </div>
         <button type="submit">Submit</button>
       </form>
-      <div id="successMessage" class="success"></div>
     </div>
 
     <script>
@@ -172,7 +183,7 @@
       const successMessage = document.getElementById("successMessage");
 
       form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); // Prevent default form submission
 
         // Clear previous errors and success message
         document.getElementById("nameError").textContent = "";
@@ -217,11 +228,32 @@
           valid = false;
         }
 
-        // If all validations pass, simulate form submission
+        // If all validations pass, send data to backend
         if (valid) {
-          successMessage.textContent =
-            "Thank you for contacting us! We will get back to you soon.";
-          form.reset();
+          fetch("http://localhost:3000/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone, message }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.error) {
+                successMessage.style.color = "red";
+                successMessage.textContent =
+                  "❌ Failed to send message. Try again.";
+              } else {
+                successMessage.style.color = "green";
+                successMessage.textContent =
+                  "✅ Thank you for contacting us! We will get back to you soon.";
+                form.reset();
+              }
+            })
+            .catch((err) => {
+              successMessage.style.color = "red";
+              successMessage.textContent =
+                "⚠️ Server error. Please try again later.";
+              console.error(err);
+            });
         }
       });
     </script>
