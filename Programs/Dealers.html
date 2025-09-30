@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="Dealers.css" />
   </head>
   <body>
-    <!-- 🔹 Navbar -->
+    <!-- Navbar -->
     <nav
       class="navbar navbar-light navbar-expand-lg bg-transparent navigation fw-bold"
       style="
@@ -63,10 +63,10 @@
       </div>
     </nav>
 
-    <!-- 🔹 Dealers will load here -->
+    <!-- Dealers will load here -->
     <div class="content"></div>
 
-    <!-- 🔹 Footer -->
+    <!-- Footer -->
     <footer id="footer" class="footer">
       <div class="footer-content">
         <div class="footer-section">
@@ -92,7 +92,7 @@
       </div>
     </footer>
 
-    <!-- 🔹 Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -100,7 +100,7 @@
 
         const contentDiv = document.querySelector(".content");
 
-        // 🔹 Fetch dealer data from backend
+        // Fetch dealer data from backend
         fetch("http://localhost:3000/dealers")
           .then((res) => res.json())
           .then((dealers) => {

@@ -18,13 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // adds margin whenever any link of model-nav clicked
-  // modelNavItems.forEach((item) => {
-  //   item.addEventListener("click", function () {
-  //     allModelDiv.style.paddingTop = "100px";
-  //   });
-  // });
-
   // makes model navbar sticky on top
   window.addEventListener("scroll", function () {
     if (window.scrollY >= offsetTop) {
@@ -34,26 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const gridContainer = document.querySelector(".all-cars");
-//   const gridItems = gridContainer.querySelectorAll(".car-button");
-
-//   function adjustGridLayout() {
-//     const containerWidth = gridContainer.clientWidth;
-//     const itemWidth = gridItems[0]?.clientWidth || 0;
-//     const maxItemsPerRow = Math.floor(containerWidth / itemWidth);
-
-//     if (gridItems.length <= maxItemsPerRow) {
-//       gridContainer.style.gridTemplateRows = "1fr";
-//     } else {
-//       gridContainer.style.gridTemplateRows = "auto";
-//     }
-//   }
-
-//   adjustGridLayout();
-//   window.addEventListener("resize", adjustGridLayout);
-// });
 
 // ScrollSpy: add 'active' class to nav links based on scroll position
 function setupScrollSpy() {
